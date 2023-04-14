@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gestão de Tarefas </title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <header class="app-header">
+        <h1 class="logo"> TodoList </h1>
+        <nav class="nav-bar">
+            <ul>
+                <li onclick="changePage(0)" > Início  </li>
+                <li onclick="changePage(1)" > Tarefas  </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="home pages">
+            <h1> Bem vindo ao <span> TodoList </span></h1>
+            <p>
+                A melhor aplicação para gestão de tarefas!
+            </p>
+            <button>
+                Criar tarefa
+            </button>
+        </section>
+        <div class="container-modal hide">
+            <div class="content-modal hide">
+                <div class="modal-header">
+                    <h1> TodoList</h1>
+                    <button class="close-modal" title="Fechar" > X </button>
+                </div>
+                <div>
+                    <input type="text" placeholder="Nome da tarefa" class="name">
+                    <textarea placeholder="Descrição da tarefa" class="description"></textarea>
+                    <button class="add-btn" disabled="true" > Criar tarefa </button>
+                </div>
+            </div>
+        </div>
+        <section class="pages todos">
+            <div class="content">
+                <input type="search" class="search-input" placeholder="Pesquisar tarefas ">
+
+                <div class="todo-list">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="edit-container-modal hide">
+            <div class="edit-content-modal hide">
+                <div class="edit-modal-header">
+                    <h1> TodoList </h1>
+                    <button class="close-edit-modal" > X </button>
+                </div>
+                <div>
+                    <input type="text" class="edited-name" placeholder="Nome da tarefa">
+                    <textarea class="edited-description" placeholder="Descrição da tarefa"></textarea>
+                    <button class="edit-btn" > Editar tarefa </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

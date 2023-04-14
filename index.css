@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #222;
+}
+
+body {
+    max-width: 100vw;
+    background-color: #fff;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+    width: 100%;
+    height: 4rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    background-color: #f5f5f5;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #00f;
+}
+
+.nav-bar ul {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+}
+
+.nav-bar ul li {
+    color: #00f;
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 1.3rem;
+    transition: all .5s ease-in-out;
+}
+
+.nav-bar ul li:last-child {
+    margin-right: 0;
+}
+
+.container {
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.home h1 {
+    color: #00f;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.home h1 span {
+    color: #fff;
+    background-color: #00f;
+    padding: .4rem .8rem;
+    font-size: 1.8rem;
+    border-radius: .2rem;
+    box-shadow:  0 1px 3px rgba(0,0,0,0.2);
+}
+
+.home p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.home button {
+    color: #fff;
+    border: 2px solid #00f;
+    padding: .5rem 1.4rem;
+    background-color: #00f;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    font-size: 1.1rem;
+}
+
+.home button:hover {
+    background-color: #fff;
+    color: #00f;
+}
+.container-modal.hide , .content-modal.hide, .edit-container-modal.hide , .edit-content-modal.hide {
+    display: none;
+}
+
+.container-modal , .edit-container-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    animation: animate 2s ease-in-out forwards;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.content-modal , .edit-content-modal{
+    width: 30rem;
+    max-width: 95%;
+    height: auto;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    animation: animate 2s ease-in-out forwards;
+    padding: 1rem 1.5rem;
+    padding-bottom: 1.5rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+   
+.modal-header , .edit-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header h1 , .edit-modal-header h1{
+    color: #00f;
+    font-size: 1.8rem;
+}
+
+.modal-header button , .edit-modal-header button {
+    background-color: #f00;
+    padding: .2rem .4rem;
+    border-radius: .2rem;
+    font-weight: 700;
+    color: #fff;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.content-modal input  , .edit-content-modal input{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 2.5rem;
+    background-color: #f5f5f5;
+    padding: 0 1rem;
+    border: 2px solid #f5f5f5;
+    border-radius: .5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    outline: none;
+    transition: all .5s ease-in-out;
+}
+
+.content-modal input:focus , .edit-content-modal input:focus {
+    border-color: #00f;
+}
+
+.content-modal textarea  , .edit-content-modal textarea{ 
+    width: 100%;
+    height: 7rem;
+    resize: none;
+    background-color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.content-modal textarea:focus , .edit-content-modal textarea:focus {
+    border-color: #00f;
+}
+
+.content-modal .add-btn , .edit-content-modal .edit-btn {
+    width: 100%;
+    height: 2.6rem;
+    background-color: #00f;
+    color: #fff;
+    border: 2px solid #00f;
+    border-radius: .5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.content-modal .add-btn:disabled , .edit-content-modal .edit-btn:disabled {
+    opacity: .2;
+    cursor: not-allowed;
+}
+
+.content-modal .add-btn:hover , .edit-content-modal .edit-btn:hover {
+    background-color: #fff;
+    color: #00f;
+}
+
+.todos {
+    display: none;
+    padding-top: 4rem;
+    width: 100%;
+    height: 100%;
+}
+
+.todos .content {
+    width: 35rem;
+    max-width: 90%;
+    height: auto;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-radius: .5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin: 4rem auto;
+    text-align: right;
+}
+
+.todos .search-input {
+    outline: none ;
+    height: 2.5rem;
+    width: 20rem;
+    padding: 0 1rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    box-shadow:  0 1px 3px rgba(0,0,0,0.1);
+    transition: all .5s ease-in-out;
+}
+
+.todos .search-input:focus {
+    border-color: #00f;
+}
+
+.todos .todo-list ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 1rem;
+}
+.todos .todo-list ul li {
+    background-color: #fff;
+    padding: .3rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    box-shadow:  0 1px 3px rgba(0,0,0,0.2);
+    font-size: 1.1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todos .todo-list ul li:last-child {
+    margin-bottom: 0;
+}
+.todos .todo-list ul li p {
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.todos .todo-list ul li button {
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    color: #fff;
+    background-color: #00f;
+    padding: .4rem 1.2rem;
+    border: 2px solid #00f;
+    border-radius: .5rem;
+    font-weight: 600;
+}
+
+.todos .todo-list ul li button:nth-child(1) {
+    margin-right: 1rem;
+}
+
+.todos .todo-list ul li button:hover {
+    color: #00f;
+    background-color: #fff;
+}
